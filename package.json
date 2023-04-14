@@ -1,0 +1,44 @@
+{
+  "name": "yasser-reddit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev":"nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YasserAmro0/Yasser-Reddit.git"
+  },
+  "keywords": [
+    "Express",
+    "Database",
+    "Postgres",
+    "Node Js",
+    "Test"
+  ],
+  "author": "Yasser Alaa Abu Amro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YasserAmro0/Yasser-Reddit/issues"
+  },
+  "homepage": "https://github.com/YasserAmro0/Yasser-Reddit#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.9.1",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
+  }
+}
