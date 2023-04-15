@@ -8,7 +8,6 @@
    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="/css/login.css">
-    
     <link rel="icon" type="image/png" sizes="32x32" href="/images/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/fav/favicon-16x16.png">
     <link rel="manifest" href="/images/fav/site.webmanifest">
@@ -24,16 +23,17 @@
         <div class="sign-up-container">
           <p class="title">Create a new account</p>
           <div id="sign-up" class="sign-up-form">
-            <input type="text" name="username" class="form-control" placeholder="choose a username" />
-            <input type="password" name="password" class="form-control" placeholder="password" />
-            <input type="email" name="email" class="form-control" placeholder="email" />
-            <input type="date" placeholder="enter your Birthday">
+            <input type="text" name="username" class="form-control usernameSignUp" placeholder="choose a username" />
+            <input type="password" name="password" class="form-control passwordsignUp" placeholder="password" />
+            <input type="email" name="email" class="form-control emailSignUp" placeholder="email" />
+            <input type="date" placeholder="enter your Birthday" class="birthday">
             <fieldset data-role="controlgroup">
-         <legend>Choose your gender:</legend>
-        <label for="male">Male</label>
-        <input type="radio" name="gender"  id="male" value="male" >
-        <label for="female">Female</label>
-        <input type="radio" name="gender"  id="female" value="female">
+           <div class="gender">
+              <select class="gender" id="gender">
+                <option id="mail" value="male">male</option>
+                <option id="female" value="female">female</option>
+              </select>
+            </div>
       </fieldset>
             <button class="btn sign-up-btn">Sign Up</button>
           </div>
@@ -41,7 +41,7 @@
 
         <div class="login-container">
           <p class="title">Log In</p>
-          <form  id="login" class="login-form">
+          <div  id="login" class="login-form">
             <input type="text"  class="form-control" placeholder="username" />
             <input type="password" class="form-control" placeholder="password" />
             <button class="btn login-btn">Log in</button>
@@ -49,5 +49,6 @@
     </div>
     </div>
     </main>
+    <script src="./js/signup.js"></script>
   </body>
 </html>
