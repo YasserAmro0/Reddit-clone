@@ -8,6 +8,15 @@ const gender = document.getElementById("gender");
 
 
 signUpbtn.addEventListener('click', () => {
+
+    if (usernameSignUp.value.length < 3 || usernameSignUp.value.length > 20) {
+        window.alert("username must be at least 3 characters and less than 20 characters long ");
+    }
+
+    if (passwordsignUp.value.length < 5 || passwordsignUp.value.length > 30) {
+        window.alert("password must be at least 5 characters and less than 30 characters long ");
+    }
+
     const body = {
         username: usernameSignUp.value,
         password: passwordsignUp.value,
