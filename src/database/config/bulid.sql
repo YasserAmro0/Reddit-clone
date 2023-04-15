@@ -32,4 +32,6 @@ CREATE TABLE comments(
     created_at TIMESTAMP NOT NULL default CURRENT_TIMESTAMP
 );
 
+insert into users (username,password, email, birthday,gender) values ('yasssser','123456789','yasser@gmail.com','3/3/3','male');
+
 COMMIT;
