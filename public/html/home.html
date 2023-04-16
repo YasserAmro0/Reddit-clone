@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reddit</title>
-    <link rel="icon" href="./images/R.png" />
+    <!-- <link rel="icon" href="./images/R.png" /> -->
     <script
       src="https://kit.fontawesome.com/81c816aea5.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./css/popup.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/collapsibles.css" />
+    <link rel="stylesheet" href="../css/home.css" />
   </head>
   <body>
     <!--******************************* Header**************************** -->
     <header id="top">
       <div class="title">
-        <img src="./images/R.png" class="logo" />
+        <img src="../icons/logo.svg" class="logo" />
         <h2>Reddit</h2>
       </div>
       <div class="search">
@@ -26,22 +27,34 @@
       </div>
       <div class="btns">
         <!-- Trigger/Open The Modal -->
-        <button id="signup">Sign up | Login</button>
+        <a class="logout" href="/logout">Log Out</a>
+        <a href="/profile" id="profile-link">
+          <button id="user" class="fetch-profile">
+            <i class="fas fa-user icon icon2"></i>
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+        </a>
       </div>
     </header>
     <!--*******************************Body  **************************** -->
     <main>
-      <!------------ Top Cards---------------- -->
-      <section class="trending">
-        <h3 class="title">Trending Today</h3>
-        <div class="top-container"></div>
+      <!------------ Create post---------------- -->
+      <section class="create-post">
+        <div class="posts">
+          <form class="creating-post item" action="/post" method="POST">
+            <img src="../images/R.png" alt="reddit" class="logo" />
+            <input type="text" placeholder="Create Post" name="postContent" required />
+            <input type="text" placeholder="Enter img link" name="imgLink" />
+            <button type="submit"><i class="fas fa-plus"></i></button>
+          </form>
+        </div>
       </section>
-      <!------------ popular posts---------------- -->
+      <!------------ popular-posts---------------- -->
       <section class="popular-posts">
         <h3 class="title">Popular Posts</h3>
         <div class="popular-container">
           <!-- Left Side   -->
-          <div class="posts">
+          <div class="posts" id="post-contain">
             <div class="item">
               <button style="color: #0079d3;">
                 <i class="fab fa-hotjar"></i>
@@ -64,8 +77,8 @@
                 <i class="fas fa-chevron-down"></i>
               </button>
             </div>
-            <!--****************************************  -->
-            <!-- POSTS WILL APPEAR HERE -->
+            <!-- ****************************************  -->
+            <!-- POSTS WILL APPEA HERE  -->
           </div>
           <!-- **************************** Right Side ********************************** -->
           <div class="right">
@@ -169,9 +182,7 @@
                   <li>Communities</li>
                   <li>Terms</li>
                   <li>Content Policy</li>
-                  <li>
-                    Privacy Policy
-                  </li>
+                  <li>Privacy Policy</li>
                   <li>Mod Policy</li>
                 </ul>
               </div>
@@ -182,6 +193,6 @@
         </div>
       </section>
     </main>
-    <script src="./js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>
