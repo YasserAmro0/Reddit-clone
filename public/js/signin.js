@@ -44,7 +44,7 @@ loginBtn.addEventListener('click', () => {
                 window.alert(data.message);
             }
             else {
-                window.alert("welcome to Home Page :)")
+                window.location.href = 'home';
             }
         })
         .catch((err) => console.log(err));

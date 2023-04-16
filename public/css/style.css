@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  background-color: #dae0e6;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+header .title{
+  font-family: 'Courgette', cursive;
+}
+button,
+a,
+#link-login,
+#link-sign {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  margin: 5px;
+}
+.title {
+  color: #1a1a1b;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+}
+/* **************************** Header Style********************************* */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+}
+header .title {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.creating-post .logo,
+header .logo {
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+
+}
+.search {
+  width: 50%;
+  background-color: #f5f3f3;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+}
+.search .icon {
+  padding: 5px;
+  font-size: 20px;
+  color: #b3b3b3;
+}
+.search input {
+  width: 60%;
+  border: none;
+  background-color: #f5f3f3;
+  padding: 7px;
+  font-size: 18px;
+}
+.search:hover {
+  border-color: rgb(78, 125, 197);
+  background-color: #fff;
+}
+.search:hover input {
+  background-color: #fff;
+}
+.btns {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.btns button,
+.btns a {
+  width: 180px;
+  height: 32px;
+  padding: 8px;
+  border-radius: 15px;
+  border: none;
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btns #login {
+  color: #1384d7;
+  border: 1px solid #1384d7;
+  background-color: #fff;
+}
+.btns #signup {
+  background-color: #1384d7;
+  color: #fff;
+}
+.btns #user {
+  background-color: #fff;
+  width: 90px;
+  border-radius: 0%;
+}
+.btns #user:hover {
+  border: 1px solid #f5f3f3;
+}
+.btns #user .icon2 {
+  margin: 5px;
+  color: #b3b3b3;
+}
+.btns #user .arrow {
+  font-size: 16px;
+  background-color: #fff;
+}
+/*********************** Body ******************* */
+main {
+  width: 80%;
+  background-color: #dae0e6;
+  margin: auto;
+  padding: 6px;
+}
+.top-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card {
+  width: 24%;
+  height: 220px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+}
+.card a {
+  text-decoration: none;
+  color: #fff;
+}
+/* ******************* Forms ******************* */
+.modal-content {
+  display: flex;
+  padding: 25px;
+}
+.background {
+  width: 20%;
+  background-image: url("https://i.pinimg.com/564x/96/3a/78/963a783db437ccaed92343d9d24bb1da.jpg");
+}
+.form-container {
+  padding-left: 20px;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.form-title {
+  font-size: 20px;
+  margin: 15px 0;
+}
+.modal-content p {
+  margin: 10px 0 40px 0;
+}
+.form input,
+.form button {
+  width: 65%;
+  height: 45px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  margin: 15px 0;
+}
+.form input:hover {
+  border: 1px solid #0079d3;
+}
+.form button,
+.btn {
+  border: none;
+  border-radius: 20px;
+  background-color: #0079d3;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+#link-sign,
+#link-login {
+  color: #0079d3;
+}
+/* *************************Popular posts***************** */
+.popular-container {
+  display: flex;
+}
+.posts {
+  width: 58%;
+}
+.posts .item,
+.post-container {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #b3b3b3;
+  margin-bottom: 15px;
+  height: 60px;
+}
+.posts .item button {
+  width: 100px;
+  padding: 3px;
+  border: none;
+  color: #6e6a6a;
+  font-size: 18px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.posts .item .everywhere {
+  width: 150px;
+  color: #0079d3;
+}
+.posts .item button:hover {
+  background-color: #f6f7f8;
+}
+.posts .item button i {
+  margin: 0 5px;
+}
+
+.posts .post-container {
+  padding: 0 5px;
+  height: auto;
+}
+.posts .post-container {
+  display: flex;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+}
+.post-container .post {
+  margin-left: 10px;
+  background-color: #fff;
+}
+.post .user {
+  display: flex;
+  align-items: center;
+  padding: 10px 0 ;
+  justify-content: space-evenly;
+  width: 75%;
+}
+.post .user img {
+  width: 30px;
+  height: 30px;
+  margin: 10px 0;
+  border-radius: 15px;
+}
+.post-container .post .new {
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 10px;
+}
+.post-container .post .post-img,#profile-info img {
+  width: 250px;
+  height: 250px;
+  border-radius: 7px;
+}
+.post-container .vote {
+  width: 10%;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.vote a {
+  width: 18px;
+  border: none;
+  color: #6e6a6a;
+  font-size: 18px;
+  background-color: #f8f9fa;
+}
+.vote span {
+  margin-left: 14px;
+}
+.post-container .post {
+  width: 90%;
+}
+.comments {
+  padding: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #807d7d;
+  background-color: #fff;
+}
+.comments #show-comments,
+.comments a {
+  background-color: #fff;
+  border: none;
+  font-size: 13px;
+  color: #807d7d;
+  display: flex;
+  align-items: center;
+}
+
+/* Right Side  */
+.right {
+  width: 30%;
+}
+.communities-near {
+  margin-left: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: 1px solid #b3b3b3;
+}
+.part-title {
+  background-image: url("https://i.pinimg.com/564x/05/52/21/0552219bd2e3489729ad2acffb5ade9e.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding: 15px;
+}
+.communities-near .item {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid #d6d6d6;
+}
+.communities-near .item img {
+  width: 35px;
+  height: 35px;
+  margin: 0 25px;
+}
+.top-news {
+  background-image: url("https://i.pinimg.com/564x/2f/58/6b/2f586bb04b9acf65f93d562009ca82e4.jpg");
+}
+.communities-near .item i {
+  margin: 0 25px;
+  color: #71ea69;
+}
+.communities-near .list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+.communities-near .list li {
+  background-color: f5f3f3;
+  padding: 5px;
+}
+.btn {
+  height: 35px;
+  margin: 15px;
+}
+.lists {
+  display: flex;
+  align-items: flex-start;
+  padding: 5px 10px;
+}
+.list-all {
+  list-style: none;
+  margin-left: 15px;
+  line-height: 1.7;
+  font-size: 14px;
+}
+/*========================***Media query***======================  */
+/*----------- For ibads-------------  */
+@media (max-width: 768px) {
+  main {
+    width: 90%;
+  }
+  .btns button {
+    font-size: 14px;
+  }
+  .background {
+    background-image: none;
+    width: 0%;
+  }
+  .form input {
+    width: 90%;
+  }
+  .modal {
+    padding-top: 10px;
+  }
+  .popular-container {
+    flex-direction: column;
+  }
+  .posts {
+    width: 100%;
+  }
+  .posts .item button,
+  .posts .item .everywhere {
+    font-size: 12px;
+    width: 60px;
+  }
+  .posts .item .everywhere {
+    width: 100px;
+  }
+  .right {
+    width: 100%;
+    margin: auto;
+  }
+  .communities-near {
+    margin: 10px auto;
+  }
+  .vote {
+    width: 20%;
+  }
+  .btns {
+    width: 80%;
+  }
+  .comments a,.comments #show-comments, .user span{
+    font-size: 12px;
+  }
+}
+/*-----------  For mobiles----------------- */
+@media (max-width: 690px) {
+  main {
+    width: 95%;
+  }
+  header {
+    flex-direction: column;
+    padding-bottom: 5px;
+  }
+  .search {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  .btns {
+    width: 96%;
+  }
+  .top-container {
+    flex-direction: column;
+  }
+  .card {
+    width: 80%;
+    margin: 10px auto;
+  }
+  .modal-content {
+    width: 90%;
+  }
+  .modal {
+    padding-top: 5px;
+  }
+  .posts .item button,
+  .posts .item .everywhere {
+    font-size: 9px;
+  }
+  .vote {
+    width: 22%;
+  }
+  .post .user {
+    width: 100%;
+  }
+  .post-container .post .post-img {
+    width:200px;
+  }
+}

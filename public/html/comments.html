@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit</title>
+    <link rel="icon" href="./images/R.png" />
+    <script
+      src="https://kit.fontawesome.com/81c816aea5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/collapsibles.css" />
+  </head>
+  <!--******************************* Header**************************** -->
+  <body>
+    <header id="top">
+      <div class="title">
+        <img src="../images/R.png" class="logo" />
+        <h2>Reddit</h2>
+      </div>
+      <div class="search">
+        <i class="fas fa-search icon"></i>
+        <input type="text" placeholder="Search Reddit" id="serach-input" />
+      </div>
+      <div class="btns">
+        <a id="home" href="/home"> <i class="fas fa-home"></i> Home </a>
+        <a class="logout" href="/logout">Log Out</a>
+        <a href="/profile" id="profile-link">
+          <button id="user" class="fetch-profile">
+            <i class="fas fa-user icon icon2"></i>
+            <i class="fas fa-chevron-down arrow"></i>
+          </button>
+        </a>
+      </div>
+    </header>
+    <!--*******************************Body  **************************** -->
+    <main>
+      <div class="posts" id="post-contain">
+        <h2 class="title"> Post </h2>
+      </div>
+      <div class="posts" id="comments-contain">
+        <h2 class="title"> Comments </h2>
+      </div>
+    </main>
+    <script src="../js/comments.js"></script>
+  </body>
+</html>

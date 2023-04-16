@@ -97,7 +97,8 @@ header img {
 .login-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
+  margin: 20px auto;
 }
 
 .login-form {
@@ -105,6 +106,7 @@ header img {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+
 }
 
 .row {
