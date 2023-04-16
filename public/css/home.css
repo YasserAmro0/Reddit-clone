@@ -83,10 +83,12 @@ i {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+   background-color: crimson;
+   color: white;
 }
 .logout:hover {
   color: #fff;
-  background-color: crimson;
+  background-color: rgb(235, 100, 127);
 }
 @media (max-width: 1000px) {
   .logout {
