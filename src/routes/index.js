@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const postUserController = require('../controller/auth/signup');
-const signinController = require("../controller/auth/signin");
-const logOutController = require("../controller/auth/logout");
+
+const { postUserController, signinController, logOutController } =require("../controller/auth")
 const { clientError, serverError } = require("../controller/errors");
-const { redirectToLogin, redirectToHome, redirectToProfile } = require("../middleware/index");
+const { redirectToLogin, redirectToHome, redirectToProfile } = require("../controller/redirectFiles/index");
 const authenticatedUser = require("../middleware/authenticatedUser");
 const isLogged = require("../middleware/isLogged");
+
 
 router.use("/check", authenticatedUser, isLogged);
 

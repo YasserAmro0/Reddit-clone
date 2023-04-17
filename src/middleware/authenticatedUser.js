@@ -1,4 +1,4 @@
-const { generateToken, verifyToken } = require('../utils/jwt/generateToken');
+const { verifyToken } = require('../utils/jwt/verifyToken');
 
 const authenticatedUser = (req, res, next) => {
     const { token } = req.cookies;

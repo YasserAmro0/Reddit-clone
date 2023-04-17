@@ -1,10 +1,9 @@
-const { verifyToken } = require('../utils/jwt/generateToken');
+const { verifyToken } = require('../utils/jwt/verifyToken');
 
 const isLogged = (req, res, next) => {
     const { token } = req.cookies;
     if (token) {
         verifyToken(token)
-            // .then((data) => console.log(data))
             .then((data) => res.send({
                 message: "go home page",
                 dataNow: data,

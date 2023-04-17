@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const signInQuery = require('../../database/queries/signinquery');
 const signInSchema = require("../../utils/validation/signinSchema");
 const CustomError = require("../../utils/error/index");
-const { generateToken, verifyToken } = require("../../utils/jwt/generateToken");
+const { generateToken } = require("../../utils/jwt/generateToken");
 
 const signinController = (req, res, next) => {
     const { email, password } = req.body;
