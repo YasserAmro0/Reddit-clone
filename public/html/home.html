@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/collapsibles.css" />
     <link rel="stylesheet" href="../css/home.css" />
+        <link rel="stylesheet" href="../css/post.css">
+
   </head>
   <body>
     <!--******************************* Header**************************** -->
@@ -42,12 +44,12 @@
       <!------------ Create post---------------- -->
       <section class="create-post">
         <div class="posts">
-          <form class="creating-post item" action="/post" method="POST">
+          <div class="creating-post item">
             <img src="../images/R.png" alt="reddit" class="logo" />
-            <input type="text" placeholder="Create Post" name="postContent" required />
-            <input type="text" placeholder="Enter img link" name="imgLink" />
-            <button type="submit"><i class="fas fa-plus"></i></button>
-          </form>
+            <input type="text" class="contentV" placeholder="Create Post" name="postContent" required/>
+            <input type="text" class="image_url" placeholder="Enter img link" name="imgLink" />
+            <button type="submit" class="sub"><i class="fas fa-plus"></i></button>
+          </div>
         </div>
       </section>
       <!------------ popular-posts---------------- -->
@@ -80,116 +82,11 @@
             </div>
             <!-- ****************************************  -->
             <!-- POSTS WILL APPEA HERE  -->
+              <div class="main-post-wrapper-light"">
+                    
           </div>
           <!-- **************************** Right Side ********************************** -->
-          <div class="right">
-            <!-- ***********1******** -->
-            <div class="communities-near">
-              <h3 class="part-title">Communities Near You</h3>
-              <div class="item">
-                <span>1</span>
-                <img
-                  src="https://th.bing.com/th/id/OIP.hgaeMrZGp-Dvtq6L5S6aSwHaHa?w=198&h=198&c=7&r=0&o=5&pid=1.7"
-                  alt="palestine falg"
-                />
-                <p>r/Palestine</p>
-              </div>
-              <div class="item" style="border: none;">
-                <span>2</span>
-                <img
-                  src="https://th.bing.com/th/id/OIP.ZmKy0xU9ZHYQLNnrnR3orQHaHa?pid=ImgDet&rs=1"
-                  alt="Egypt falg"
-                />
-                <p>r/Egypt</p>
-              </div>
-              <button class="btn">View All</button>
-              <ul class="list">
-                <li>Top</li>
-                <li>News</li>
-                <li>Awww</li>
-                <li>Gaming</li>
-              </ul>
-            </div>
-            <!-- *********2*********** -->
-            <div class="communities-near">
-              <h3 class="part-title top-news">Top News Communities</h3>
-              <div class="item">
-                <span>1</span>
-                <i class="fas fa-chevron-up"></i>
-                <img
-                  src="https://i.pinimg.com/564x/95/9e/bc/959ebc02b7b88c12dc1bdd6e22334e35.jpg"
-                  alt="icon"
-                />
-              </div>
-              <div class="item">
-                <span>2</span>
-                <i class="fas fa-chevron-up"></i>
-                <img
-                  src="https://i.pinimg.com/564x/80/cb/19/80cb19f15f3d856151e9fdf2c8e2540e.jpg"
-                  alt="icon"
-                />
-              </div>
-              <div class="item">
-                <span>3</span>
-                <i class="fas fa-chevron-up"></i>
-                <img
-                  src="https://i.pinimg.com/564x/45/9e/d1/459ed100efebc7d6b9575ca98ad22078.jpg"
-                  alt="icon"
-                />
-              </div>
-              <div class="item">
-                <span>4</span>
-                <i class="fas fa-chevron-up"></i>
-                <img
-                  src="https://i.pinimg.com/236x/a1/a5/48/a1a548ac1852a7ca5c93b3ee1aaec1ae.jpg"
-                  alt="icon"
-                />
-              </div>
-              <div class="item" style="border: none;">
-                <span>5</span>
-                <i class="fas fa-chevron-up"></i>
-                <img
-                  src="https://i.pinimg.com/236x/ec/66/9c/ec669c071bdc1cca1586539e928f9640.jpg"
-                  alt="icon"
-                />
-              </div>
-              <button class="btn">View All</button>
-              <ul class="list">
-                <li>Top</li>
-                <li>News</li>
-                <li>Awww</li>
-                <li>Gaming</li>
-              </ul>
-            </div>
-            <!-- ********3**************** -->
-            <div class="communities-near">
-              <div class="lists">
-                <ul class="list-all">
-                  <li>Help</li>
-                  <li>Reddit Coins</li>
-                  <li>Reddit Premium</li>
-                  <li>Reddit Gifts</li>
-                  <li>Communities</li>
-                  <li>Reddit Gifts</li>
-                  <li>Rereddit</li>
-                  <li>Topics</li>
-                </ul>
-
-                <ul class="list-all">
-                  <li>About</li>
-                  <li>Careers</li>
-                  <li>Press</li>
-                  <li>Advertise</li>
-                  <li>Communities</li>
-                  <li>Terms</li>
-                  <li>Content Policy</li>
-                  <li>Privacy Policy</li>
-                  <li>Mod Policy</li>
-                </ul>
-              </div>
-              <p>Reddit Inc © 2021 . All rights reserved</p>
-            </div>
-          </div>
+          
           <!-- ********************************************** -->
         </div>
       </section>
