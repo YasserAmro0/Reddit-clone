@@ -150,10 +150,10 @@ main {
   color: #fff;
 }
 /* ******************* Forms ******************* */
-.modal-content {
+/* .modal-content {
   display: flex;
   padding: 25px;
-}
+} */
 .background {
   width: 20%;
   background-image: url("https://i.pinimg.com/564x/96/3a/78/963a783db437ccaed92343d9d24bb1da.jpg");
@@ -271,6 +271,9 @@ main {
   width: 250px;
   height: 250px;
   border-radius: 7px;
+}
+#profile-info{
+  background-color: #0079d3;
 }
 .post-container .vote {
   width: 10%;

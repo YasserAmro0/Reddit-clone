@@ -7,6 +7,7 @@ const authenticatedUser = require("../middleware/authenticatedUser");
 const isLogged = require("../middleware/isLogged");
 const postDataController = require("../controller/posts/postdata")
 const getAllDataPost = require("../controller/posts/getalldata");
+const getInfoUser = require("../controller/users/getInfouser");
 
 router.use("/check", isLogged);
 router.use("/allposts", getAllDataPost);
@@ -18,9 +19,14 @@ router.use("/logout", logOutController);
 
 router.use("/home", authenticatedUser, redirectToHome);
 router.use('/login', redirectToLogin);
-router.use('/profile', authenticatedUser, redirectToProfile);
+
+
 
 router.post('/post', authenticatedUser, postDataController);
+
+router.use('/profile/:username', authenticatedUser, redirectToProfile);
+router.get('/myprofile/:username', getInfoUser);
+
 
 router.use(clientError);
 router.use(serverError);

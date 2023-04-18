@@ -1,34 +1,42 @@
-const userName_user = document.querySelector(".userName_user");
+
+const mainposwrapperlight = document.querySelector(".main-post-wrapper-light");
 const sub = document.querySelector(".sub");
 const content = document.querySelector(".contentV");
 const image_url = document.querySelector(".image_url");
-const mainposwrapperlight = document.querySelector(".main-post-wrapper-light");
+const profileinfo = document.querySelector("#profile-info");
 
+const user = window.location.href.split("profile/")[1];
 
-fetch('/check')
+fetch(`/myprofile/${user}`)
     .then((data) => data.json())
-    .then((data) => {
-        getprofile(data)
-        userName_user.textContent = `${data.dataNow.username}`;
-
-    });
-const getprofile = (data) => {
-    userName_user.addEventListener('click', () => {
-        window.location.href = `/profile/${data.dataNow.username}`;
-    })
-}
-
-
-
-fetch('/allposts')
-    .then((data) => data.json())
-    .then((data) => showPost(data))
+    .then((data) => showPost(data));
 
 
 
 const showPost = (data) => {
     // console.log(data[0].id)
-    data.forEach((item) => {
+
+    console.log(data.data[0].username);
+    const image = document.createElement("img");
+    image.src = "../images/user.png";
+    image.style.width = "50px";
+    image.style.height = "50px";
+    const userName = document.createElement("h1");
+    userName.textContent = `${data.data[0].username}`;
+
+    const birthday = document.createElement("p");
+    birthday.textContent = `birthday : ${data.data[0].birthday}`;
+
+    const email = document.createElement("h3");
+    email.textContent = `${data.data[0].email}`;
+    profileinfo.appendChild(image);
+    profileinfo.appendChild(userName);
+    profileinfo.appendChild(birthday);
+    profileinfo.appendChild(email);
+
+
+    data.data.forEach((item) => {
+        console.log(item)
         const mainpostlight = document.createElement("div");
         mainpostlight.className = "main-post-light";
 
@@ -85,13 +93,6 @@ const showPost = (data) => {
         spanByname.textContent = `${item.username}`;
 
 
-
-        spanByname.addEventListener('click', () => {
-            window.location.href = `/profile/${item.username}`;
-
-        })
-
-
         const iconUser = document.createElement("i");
         iconUser.className = "fa fa-user-circle-o";
         iconUser.style.fontSize = "20px"
@@ -112,7 +113,6 @@ const showPost = (data) => {
 }
 
 
-
 sub.addEventListener('click', () => {
     const body = {
         content: content.value,
@@ -126,8 +126,3 @@ sub.addEventListener('click', () => {
     content.value = "";
     image_url.value = "";
 })
-
-// function showDAATA(data) {
-//     console.log(data)
-// }
-
