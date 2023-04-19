@@ -127,7 +127,4 @@ sub.addEventListener('click', () => {
     image_url.value = "";
 })
 
-// function showDAATA(data) {
-//     console.log(data)
-// }
 

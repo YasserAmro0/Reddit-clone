@@ -1,8 +1,5 @@
 
 const mainposwrapperlight = document.querySelector(".main-post-wrapper-light");
-const sub = document.querySelector(".sub");
-const content = document.querySelector(".contentV");
-const image_url = document.querySelector(".image_url");
 const profileinfo = document.querySelector("#profile-info");
 
 const user = window.location.href.split("profile/")[1];
@@ -113,16 +110,3 @@ const showPost = (data) => {
 }
 
 
-sub.addEventListener('click', () => {
-    const body = {
-        content: content.value,
-        image_url: image_url.value
-    };
-    fetch("/post", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-    })
-    content.value = "";
-    image_url.value = "";
-})

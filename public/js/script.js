@@ -20,7 +20,6 @@ fetch('/allposts')
 
 
 const showPost = (data) => {
-    // console.log(data[0].id)
     data.forEach((item) => {
         console.log(item)
         const mainpostlight = document.createElement("div");
@@ -58,8 +57,6 @@ const showPost = (data) => {
         spanContent.textContent = `${item.content}`;
 
         Xdpjnlight.appendChild(spanContent);
-
-        // mainpostlight.appendChild(Xdpjnlight);
 
         const iyZCUvlight = document.createElement("div");
         iyZCUvlight.className = "iyZCUv-light"
