@@ -8,8 +8,6 @@ fetch('/check')
     .then((data) => {
         if (data.message === 'go home page') {
             window.location.href = 'home';
-        } else {
-            console.log("i am Soory")
         }
     })
 
@@ -33,10 +31,15 @@ const showPost = (data) => {
 
         const iUp = document.createElement("i");
         iUp.className = "fas fa-chevron-up";
-        let num = 0;
+        let num;
         const spanNumber = document.createElement("span");
         spanNumber.className = "spanNumber";
-        spanNumber.textContent = `${num}`;
+        fetch(`/count/${item.id}`)
+            .then((data) => data.json())
+            .then((data) => {
+                num = data[0].count
+                spanNumber.innerHTML = `${num}`;
+            });
 
         divComponent.appendChild(idown);
         divComponent.appendChild(spanNumber)
