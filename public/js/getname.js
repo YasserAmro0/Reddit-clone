@@ -11,7 +11,6 @@ fetch('/check')
     .then((data) => {
 
         if (data.message === "go home page") {
-            console.log(data);
             userName_user.textContent = `${data.dataNow.username}`;
             getprofile(data)
         }
@@ -34,7 +33,6 @@ fetch('/allposts')
 
 const showPost = (data) => {
     let num;
-    console.log(data);
     data.forEach((item) => {
         const mainpostlight = document.createElement("div");
         mainpostlight.className = "main-post-light";

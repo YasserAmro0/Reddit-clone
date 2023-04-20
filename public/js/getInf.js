@@ -30,7 +30,6 @@ const showPost = (data) => {
 
 
     data.data.forEach((item) => {
-        console.log(item)
         const mainpostlight = document.createElement("div");
         mainpostlight.className = "main-post-light";
 
