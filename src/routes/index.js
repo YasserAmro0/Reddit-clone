@@ -8,24 +8,30 @@ const isLogged = require("../middleware/isLogged");
 const postDataController = require("../controller/posts/postdata")
 const getAllDataPost = require("../controller/posts/getalldata");
 const getInfoUser = require("../controller/users/getInfouser");
-
-router.use("/check", isLogged);
-router.use("/allposts", getAllDataPost);
-
+const addVoteController = require("../controller/votes/addvote");
+const countVoteController = require("../controller/votes/countvote");
+const deleteVoteController = require("../controller/votes/deletevote");
 router.post("/signup", postUserController);
 router.post("/signin", signinController);
-
 router.use("/logout", logOutController);
-
-router.use("/home", authenticatedUser, redirectToHome);
+router.use("/check", isLogged);
 router.use('/login', redirectToLogin);
 
+
+router.use("/allposts", getAllDataPost);
+
+
+router.use("/home", authenticatedUser, redirectToHome);
 
 
 router.post('/post', authenticatedUser, postDataController);
 
 router.use('/profile/:username', authenticatedUser, redirectToProfile);
 router.get('/myprofile/:username', getInfoUser);
+
+router.get('/votes/up/:post_id', authenticatedUser, addVoteController);
+router.get('/votes/down/:post_id', authenticatedUser, deleteVoteController);
+router.get('/count/:post_id', countVoteController);
 
 
 router.use(clientError);

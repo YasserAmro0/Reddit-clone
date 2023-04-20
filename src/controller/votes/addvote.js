@@ -1,0 +1,22 @@
+const addVoteQuery = require('../../database/queries/addvotequery');
+const userVoteQuery = require("../../database/queries/uservotequery");
+
+
+const addVoteController = (req, res) => {
+    const { post_id } = req.params;
+    let user_id = req.user.id;
+    userVoteQuery({ post_id, user_id })
+        .then((data) => {
+            if (data.rowCount === 0) {
+                addVoteQuery({ post_id, user_id })
+                    .then(() => res.status(200).json({ status: 201, message: 'done' }))
+            } else {
+                res.status(201).json({ status: 201, message: 'You voted before' });
+
+            }
+        })
+        .catch(err => console.log(err));
+}
+
+module.exports = addVoteController;
+

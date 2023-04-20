@@ -11,9 +11,6 @@ fetch(`/myprofile/${user}`)
 
 
 const showPost = (data) => {
-    // console.log(data[0].id)
-
-    console.log(data.data[0].username);
     const image = document.createElement("img");
     image.src = "../images/user.png";
     image.style.width = "50px";
@@ -49,10 +46,16 @@ const showPost = (data) => {
         iUp.className = "fas fa-chevron-up";
 
 
-        let num = 0;
+        let num;
         const spanNumber = document.createElement("span");
         spanNumber.className = "spanNumber";
-        spanNumber.innerHTML = `${num}`;
+        console.log(item.id)
+        fetch(`/count/${item.id}`)
+            .then((data) => data.json())
+            .then((data) => {
+                num = data[0].count
+                spanNumber.innerHTML = `${num}`;
+            });
 
         divComponent.appendChild(idown);
         divComponent.appendChild(spanNumber)

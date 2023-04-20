@@ -9,8 +9,6 @@ const isLogged = (req, res, next) => {
                 dataNow: data,
                 statusCode: 200,
             }));
-
-
     } else {
         next();
     }

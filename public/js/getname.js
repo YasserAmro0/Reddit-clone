@@ -1,3 +1,4 @@
+
 const userName_user = document.querySelector(".userName_user");
 const sub = document.querySelector(".sub");
 const content = document.querySelector(".contentV");
@@ -8,8 +9,13 @@ const mainposwrapperlight = document.querySelector(".main-post-wrapper-light");
 fetch('/check')
     .then((data) => data.json())
     .then((data) => {
-        getprofile(data)
-        userName_user.textContent = `${data.dataNow.username}`;
+
+        if (data.message === "go home page") {
+            console.log(data);
+            userName_user.textContent = `${data.dataNow.username}`;
+            getprofile(data)
+        }
+
 
     });
 const getprofile = (data) => {
@@ -27,7 +33,8 @@ fetch('/allposts')
 
 
 const showPost = (data) => {
-    // console.log(data[0].id)
+    let num;
+    console.log(data);
     data.forEach((item) => {
         const mainpostlight = document.createElement("div");
         mainpostlight.className = "main-post-light";
@@ -38,16 +45,56 @@ const showPost = (data) => {
         const idown = document.createElement("i");
         idown.className = "fas fa-chevron-down";
 
+        idown.addEventListener('click', () => {
+            fetch(`/votes/down/${item.id}`)
+                .then((data) => data.json())
+                .then((data) => {
+                    if (data.msg === "done") {
+                        fetch(`/count/${item.id}`)
+                            .then((data) => data.json())
+                            .then((data) => {
+                                num = JSON.parse(data[0].count);
+                                spanNumber.innerHTML = `${num}`;
+                            });
+                    }
+
+                }).catch((err) => console.log(err));
+
+        });
 
 
         const iUp = document.createElement("i");
         iUp.className = "fas fa-chevron-up";
 
+        iUp.addEventListener('click', () => {
+            fetch(`/votes/up/${item.id}`)
+                .then((data) => data.json())
+                .then((data) => {
+                    if (data.message === "You voted before") {
+                        return;
+                    } else if (data.message === "done") {
+                        fetch(`/count/${item.id}`)
+                            .then((data) => data.json())
+                            .then((data) => {
+                                num = JSON.parse(data[0].count)
+                                spanNumber.innerHTML = `${num}`;
+                            });
+                    }
+                }).catch((err) => console.log(err));
 
-        let num = 0;
+        });
+
+
+
         const spanNumber = document.createElement("span");
         spanNumber.className = "spanNumber";
-        spanNumber.innerHTML = `${num}`;
+        fetch(`/count/${item.id}`)
+            .then((data) => data.json())
+            .then((data) => {
+                num = data[0].count
+                spanNumber.innerHTML = `${num}`;
+
+            });
 
         divComponent.appendChild(idown);
         divComponent.appendChild(spanNumber)
@@ -125,6 +172,7 @@ sub.addEventListener('click', () => {
     })
     content.value = "";
     image_url.value = "";
+    location.reload();
 })
 
 
