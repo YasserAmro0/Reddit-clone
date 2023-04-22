@@ -143,3 +143,8 @@ border-radius: 5px;
 display: grid;
 margin-top: 10px;
 }
+
+.fa-trash-alt{
+color: red !important;
+cursor: pointer !important; 
+}

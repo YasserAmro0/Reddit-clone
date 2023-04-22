@@ -1,5 +1,3 @@
-
-
 const signup = document.querySelector("#signup");
 const mainposwrapperlight = document.querySelector(".main-post-wrapper-light");
 

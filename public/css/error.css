@@ -95,3 +95,17 @@
 }
 
 /* end style of err error page */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.img404{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+
+}

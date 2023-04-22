@@ -1,37 +1,35 @@
 
-const userName_user = document.querySelector(".userName_user");
-const sub = document.querySelector(".sub");
-const content = document.querySelector(".contentV");
-const image_url = document.querySelector(".image_url");
 const mainposwrapperlight = document.querySelector(".main-post-wrapper-light");
+const profileinfo = document.querySelector("#profile-info");
 
+const user = window.location.href.split("profile/")[1];
 
-fetch('/check')
+fetch(`/myprofile/${user}`)
     .then((data) => data.json())
-    .then((data) => {
-        if (data.message === "go home page") {
-            userName_user.textContent = `${data.dataNow.username}`;
-            getprofile(data)
-        }
-
-    });
-const getprofile = (data) => {
-    userName_user.addEventListener('click', () => {
-        window.location.href = `/profile/${data.dataNow.username}`;
-    })
-}
-
-
-
-fetch('/allposts')
-    .then((data) => data.json())
-    .then((data) => showPost(data))
+    .then((data) => showPost(data));
 
 
 
 const showPost = (data) => {
-    let num;
-    data.forEach((item) => {
+    const image = document.createElement("img");
+    image.src = "../images/user.png";
+    image.style.width = "50px";
+    image.style.height = "50px";
+    const userName = document.createElement("h1");
+    userName.textContent = `${data.data[0].username}`;
+
+    const birthday = document.createElement("p");
+    birthday.textContent = `birthday : ${data.data[0].birthday}`;
+
+    const email = document.createElement("h3");
+    email.textContent = `${data.data[0].email}`;
+    profileinfo.appendChild(image);
+    profileinfo.appendChild(userName);
+    profileinfo.appendChild(birthday);
+    profileinfo.appendChild(email);
+
+
+    data.data.forEach((item) => {
         const mainpostlight = document.createElement("div");
         mainpostlight.className = "main-post-light";
 
@@ -41,46 +39,13 @@ const showPost = (data) => {
         const idown = document.createElement("i");
         idown.className = "fas fa-chevron-down";
 
-        idown.addEventListener('click', () => {
-            fetch(`/votes/down/${item.id}`)
-                .then((data) => data.json())
-                .then((data) => {
-                    if (data.msg === "done") {
-                        fetch(`/count/${item.id}`)
-                            .then((data) => data.json())
-                            .then((data) => {
-                                num = JSON.parse(data[0].count);
-                                spanNumber.innerHTML = `${num}`;
-                            });
-                    }
-
-                }).catch((err) => console.log(err));
-
-        });
 
 
         const iUp = document.createElement("i");
         iUp.className = "fas fa-chevron-up";
 
-        iUp.addEventListener('click', () => {
-            fetch(`/votes/up/${item.id}`)
-                .then((data) => data.json())
-                .then((data) => {
-                    if (data.message === "You voted before") {
-                        return;
-                    } else if (data.message === "done") {
-                        fetch(`/count/${item.id}`)
-                            .then((data) => data.json())
-                            .then((data) => {
-                                num = JSON.parse(data[0].count)
-                                spanNumber.innerHTML = `${num}`;
-                            });
-                    }
-                }).catch((err) => console.log(err));
 
-        });
-
-
+        let num;
         const spanNumber = document.createElement("span");
         spanNumber.className = "spanNumber";
         fetch(`/count/${item.id}`)
@@ -88,7 +53,6 @@ const showPost = (data) => {
             .then((data) => {
                 num = data[0].count
                 spanNumber.innerHTML = `${num}`;
-
             });
 
         divComponent.appendChild(idown);
@@ -121,11 +85,6 @@ const showPost = (data) => {
         const gBkGwrlight = document.createElement("div");
         gBkGwrlight.className = "gBkGwr-light";
 
-
-        const spanByname = document.createElement("span");
-        spanByname.className = "userName";
-        spanByname.textContent = `${item.username}`;
-
         const btn = document.createElement("button");
         btn.className = "btnComment";
 
@@ -139,16 +98,11 @@ const showPost = (data) => {
 
             })
         }
-        
-        btn.addEventListener('click', () => {
-            window.location.href = `comments/${item.id}`;
-        })
 
 
-        spanByname.addEventListener('click', () => {
-            window.location.href = `/profile/${item.username}`;
-
-        })
+        const spanByname = document.createElement("span");
+        spanByname.className = "userName";
+        spanByname.textContent = `${item.username}`;
 
 
         const iconUser = document.createElement("i");
@@ -158,6 +112,7 @@ const showPost = (data) => {
         gBkGwrlight.appendChild(iconUser);
         gBkGwrlight.appendChild(spanByname);
         gBkGwrlight.appendChild(btn);
+
         kOWlQllight.appendChild(image);
 
         iyZCUvlight.appendChild(kOWlQllight);
@@ -170,22 +125,5 @@ const showPost = (data) => {
         mainposwrapperlight.appendChild(mainpostlight);
     });
 }
-
-
-
-sub.addEventListener('click', () => {
-    const body = {
-        content: content.value,
-        image_url: image_url.value
-    };
-    fetch("/post", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-    })
-    content.value = "";
-    image_url.value = "";
-    location.reload();
-})
 
 

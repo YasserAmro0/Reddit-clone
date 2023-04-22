@@ -20,36 +20,21 @@
     <main>
       <div class="container">
           <div class="forms-container">
-        <div class="sign-up-container">
-          <p class="title">Create a new account</p>
-          <div id="sign-up" class="sign-up-form">
-            <input type="text" name="username" class="form-control usernameSignUp" placeholder="choose a username" required/>
-            <input type="password" name="password" class="form-control passwordsignUp" placeholder="password" required/>
-            <input type="email" name="email" class="form-control emailSignUp" placeholder="email" required/>
-            <input type="date" placeholder="enter your Birthday" class="birthday">
-            <fieldset data-role="controlgroup">
-           <div class="gender">
-              <select class="gender" id="gender">
-                <option id="mail" value="male">male</option>
-                <option id="female" value="female">female</option>
-              </select>
-            </div>
-      </fieldset>
-            <button class="btn sign-up-btn">Sign Up</button>
-          </div>
-        </div>
+        
 
         <div class="login-container">
           <p class="title">Log In</p>
           <div  id="login" class="login-form">
             <input type="email"  class="form-control " id="loginUserName" placeholder="Enter Email" required/>
             <input type="password" class="form-control " id="loginPassowrd" placeholder="password" required/>
+                 <div class="bar error"></div>
+               <div class="bar success"></div>
             <button class="btn login-btn">Log in</button>
+            <a href="/signuppage">I don't have account !</a>
         </div>
     </div>
     </div>
     </main>
-    <script src="../js/signup.js"></script>
     <script src="../js/signin.js"></script>
   </body>
 </html>
