@@ -4,17 +4,21 @@ const passwordsignUp = document.querySelector(".passwordsignUp");
 const emailSignUp = document.querySelector(".emailSignUp");
 const birthday = document.querySelector(".birthday");
 const gender = document.getElementById("gender");
+const error = document.querySelector(".error");
+const success = document.querySelector(".success");
 
-
-
+// error.style.display = 'block';
 signUpbtn.addEventListener('click', () => {
 
     if (usernameSignUp.value.length < 3 || usernameSignUp.value.length > 20) {
-        window.alert("username must be at least 3 characters and less than 20 characters long ");
+        error.style.display = 'block';
+        error.textContent = "username must be at least 3 characters and less than 20 characters long ";
     }
 
     if (passwordsignUp.value.length < 5 || passwordsignUp.value.length > 30) {
-        window.alert("password must be at least 5 characters and less than 30 characters long ");
+        error.style.display = 'block';
+
+        error.textContent = "password must be at least 5 characters and less than 30 characters long ";
     }
 
     const body = {
@@ -31,10 +35,13 @@ signUpbtn.addEventListener('click', () => {
     })
         .then((data) => data.json())
         .then((result) => {
-            if (result.error == true) {
-                window.alert(result.massage);
+            console.log(result);
+            if (result.status === 400) {
+                error.style.display = 'block';
+                error.textContent = `${result.message}`;
             } else {
-                window.alert('create account successfully, login to your account')
+                success.style.display = "block";
+                success.textContent = 'create account successfully, login to your account';
             }
             usernameSignUp.value = ''
             passwordsignUp.value = ''
@@ -42,7 +49,8 @@ signUpbtn.addEventListener('click', () => {
             birthday.value = ''
             gender.value = ''
         })
-        .catch(err => {
-            window.alert(err)
+        .catch(() => {
+            error.style.display = 'block';
+            error.textContent = "you have already account";
         })
 })

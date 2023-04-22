@@ -99,3 +99,10 @@ body{
 @media screen and (max-width:660px) {
     .comment-session{width:100%}
 }
+
+.fa-trash-alt{
+    color: red ;
+cursor: pointer; 
+float: right;
+margin-left: 550px;
+}

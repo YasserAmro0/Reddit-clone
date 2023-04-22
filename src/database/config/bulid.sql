@@ -11,7 +11,7 @@ CREATE TABLE users(
 );
 
 CREATE TABLE posts(
-    id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY ,
     content TEXT not null,
     image_url TEXT,
     user_id int REFERENCES users(id),
@@ -20,15 +20,15 @@ CREATE TABLE posts(
 
 CREATE TABLE votes(
     id SERIAL PRIMARY KEY,
-    user_id int REFERENCES users(id),
-    post_id int REFERENCES posts(id)
+    user_id int REFERENCES users(id) ,
+    post_id int REFERENCES posts(id) ON DELETE CASCADE
 );
 
 CREATE TABLE comments(
     id SERIAL PRIMARY KEY,
     content TEXT not null,
     user_id int REFERENCES users(id),
-    post_id int REFERENCES posts(id),
+    post_id int REFERENCES posts(id) ON DELETE CASCADE,
     created_at TIMESTAMP NOT NULL default CURRENT_TIMESTAMP
 );
 

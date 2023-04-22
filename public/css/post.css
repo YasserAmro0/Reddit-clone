@@ -26,6 +26,7 @@
 
 .Xdpjn-light {
     display: flex;
+    justify-content: space-between;
 }
 
 .Xdpjn-light * {
