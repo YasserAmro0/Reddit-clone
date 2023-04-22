@@ -1,5 +1,5 @@
-const addVoteQuery = require('../../database/queries/addvotequery');
-const userVoteQuery = require("../../database/queries/uservotequery");
+const addVoteQuery = require('../../database/queries/votes/addvotequery');
+const userVoteQuery = require("../../database/queries/votes/uservotequery");
 
 
 const addVoteController = (req, res) => {

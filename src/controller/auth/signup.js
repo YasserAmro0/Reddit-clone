@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const postUserQuery = require('../../database/queries/signupquery');
+const postUserQuery = require('../../database/queries/auth/signupquery');
 const signupSchema = require("../../utils/validation/signupSchema");
 const CustomError = require("../../utils/error/index");
 

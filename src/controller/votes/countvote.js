@@ -1,4 +1,4 @@
-const countVoteQuery = require("../../database/queries/countvotequery");
+const countVoteQuery = require("../../database/queries/votes/countvotequery");
 
 const countVoteController = (req, res) => {
     const { post_id } = req.params;

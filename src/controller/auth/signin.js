@@ -1,6 +1,6 @@
 require('dotenv').config();
 const bcrypt = require('bcrypt');
-const signInQuery = require('../../database/queries/signinquery');
+const signInQuery = require('../../database/queries/auth/signinquery');
 const signInSchema = require("../../utils/validation/signinSchema");
 const CustomError = require("../../utils/error/index");
 const { generateToken } = require("../../utils/jwt/generateToken");

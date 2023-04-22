@@ -1,4 +1,4 @@
-const connection = require('../config/connection');
+const connection = require('../../config/connection');
 
 const userVoteQuery = (userData) => {
     const { post_id, user_id } = userData;

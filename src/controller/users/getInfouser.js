@@ -1,4 +1,4 @@
-const getInfoUserQuery = require('../../database/queries/getinfouserquery');
+const getInfoUserQuery = require('../../database/queries/users/getinfouserquery');
 
 const getInfoUser = (req, res) => {
     const { username } = req.params;
