@@ -1,4 +1,4 @@
-const postQuery = require("../../database/queries/postquery");
+const postQuery = require("../../database/queries/posts/postquery");
 const postDataController = (req, res) => {
     const { content, image_url } = req.body;
     postQuery({ content, image_url }, req.user.id)

@@ -1,4 +1,4 @@
-const getJoinPost = require("../../database/queries/getjoinpost");
+const getJoinPost = require("../../database/queries/posts/getjoinpost");
 
 const getAllDataPost = (req, res) => {
     getJoinPost()

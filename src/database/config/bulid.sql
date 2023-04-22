@@ -26,7 +26,7 @@ CREATE TABLE votes(
 
 CREATE TABLE comments(
     id SERIAL PRIMARY KEY,
-    title TEXT not null,
+    content TEXT not null,
     user_id int REFERENCES users(id),
     post_id int REFERENCES posts(id),
     created_at TIMESTAMP NOT NULL default CURRENT_TIMESTAMP

@@ -1,4 +1,4 @@
-const connection = require("../config/connection");
+const connection = require("../../config/connection");
 
 const postQuery = ({ content, image_url }, user_id) => {
     // const { content, image_url } = dataUser;

@@ -9,12 +9,10 @@ const mainposwrapperlight = document.querySelector(".main-post-wrapper-light");
 fetch('/check')
     .then((data) => data.json())
     .then((data) => {
-
         if (data.message === "go home page") {
             userName_user.textContent = `${data.dataNow.username}`;
             getprofile(data)
         }
-
 
     });
 const getprofile = (data) => {
@@ -83,7 +81,6 @@ const showPost = (data) => {
         });
 
 
-
         const spanNumber = document.createElement("span");
         spanNumber.className = "spanNumber";
         fetch(`/count/${item.id}`)
@@ -129,6 +126,23 @@ const showPost = (data) => {
         spanByname.className = "userName";
         spanByname.textContent = `${item.username}`;
 
+        const btn = document.createElement("button");
+        btn.className = "btnComment";
+
+        fetch(`/countcomment/${item.id}`)
+            .then((data) => data.json())
+            .then((data) => countComments(data));
+
+        const countComments = (data) => {
+            data.forEach((item) => {
+                btn.textContent = `comments (${item.count})`
+
+            })
+        }
+        
+        btn.addEventListener('click', () => {
+            window.location.href = `comments/${item.id}`;
+        })
 
 
         spanByname.addEventListener('click', () => {
@@ -143,6 +157,7 @@ const showPost = (data) => {
 
         gBkGwrlight.appendChild(iconUser);
         gBkGwrlight.appendChild(spanByname);
+        gBkGwrlight.appendChild(btn);
         kOWlQllight.appendChild(image);
 
         iyZCUvlight.appendChild(kOWlQllight);

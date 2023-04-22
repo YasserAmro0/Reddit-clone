@@ -133,3 +133,13 @@ color: blue;
 .fa-chevron-down:hover{
   color: red;
 }
+
+.btnComment{
+border: none;
+padding: 8px 15px;
+background-color: #0d7ad8;
+color: white;
+border-radius: 5px;
+display: grid;
+margin-top: 10px;
+}

@@ -1,4 +1,4 @@
-const connection = require('../config/connection');
+const connection = require('../../config/connection');
 
 const postUserQuery = (userData) => {
     const { username, password, email, birthday, gender } = userData;

@@ -1,4 +1,4 @@
-const deleteVoteQuery = require("../../database/queries/deletevotequery");
+const deleteVoteQuery = require("../../database/queries/votes/deletevotequery");
 
 const deleteVoteController = (req, res) => {
     const { post_id } = req.params;
