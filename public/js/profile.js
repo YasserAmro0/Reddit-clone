@@ -98,6 +98,9 @@ const showPost = (data) => {
 
             })
         }
+        btn.addEventListener('click', () => {
+            window.location.href = `/comments/${item.id}`;
+        })
 
 
         const spanByname = document.createElement("span");

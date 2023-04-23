@@ -144,7 +144,7 @@ const showPost = (data) => {
         }
 
         btn.addEventListener('click', () => {
-            window.location.href = `comments/${item.id}`;
+            window.location.href = `/comments/${item.id}`;
         })
 
         spanByname.addEventListener('click', () => {

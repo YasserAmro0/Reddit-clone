@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const viewPage = require("./viewRoutes");
+
 const { postUserController, signinController, logOutController } = require("../controller/auth")
 const { clientError, serverError } = require("../controller/errors");
 const authenticatedUser = require("../middleware/authenticatedUser");
