@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS users , posts , votes ,comments ;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
-    username VARCHAR(50) not null,
+    username VARCHAR(50) not null unique,
     password TEXT not null,
     email VARCHAR(100) not null unique,
     birthday VARCHAR(50),

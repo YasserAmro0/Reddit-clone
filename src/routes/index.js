@@ -5,7 +5,7 @@ const { clientError, serverError } = require("../controller/errors");
 const authenticatedUser = require("../middleware/authenticatedUser");
 const isLogged = require("../middleware/isLogged");
 const getInfoUser = require("../controller/users/getInfouser");
-const { getAllDataPost, postDataController, deletePost } = require("../controller/posts");
+const { getAllDataPost, postDataController, deletePost, updatePost } = require("../controller/posts");
 const { addVoteController, countVoteController, deleteVoteController } = require("../controller/votes");
 const { countCommentsController, getCommentController, postCommentController, deleteComment } = require("../controller/comments");
 
@@ -20,6 +20,7 @@ router.use("/logout", logOutController);
 router.use("/allposts", getAllDataPost);
 router.post('/post', authenticatedUser, postDataController);
 router.delete("/post/delete/:id", deletePost);
+router.put("/post/update/:id", updatePost)
 
 
 router.post("/comment/:post_id", authenticatedUser, postCommentController);

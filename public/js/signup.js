@@ -51,6 +51,6 @@ signUpbtn.addEventListener('click', () => {
         })
         .catch(() => {
             error.style.display = 'block';
-            error.textContent = "you have already account";
+            error.textContent = "you have already account userName or Email is token";
         })
 })

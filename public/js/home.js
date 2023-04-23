@@ -4,7 +4,8 @@ const sub = document.querySelector(".sub");
 const content = document.querySelector(".contentV");
 const image_url = document.querySelector(".image_url");
 const mainposwrapperlight = document.querySelector(".main-post-wrapper-light");
-
+const faplus = document.querySelector(".fa-plus");
+const fa_check = document.querySelector(".fa-check");
 
 fetch('/check')
     .then((data) => data.json())
@@ -156,11 +157,48 @@ const showPost = (data) => {
         iconUser.className = "fa fa-user-circle-o";
         iconUser.style.fontSize = "20px"
 
+        // for userName  only
         if (item.username === userName_user.textContent) {
+
             const iconDelete = document.createElement('i');
             iconDelete.className = "fas fa-trash-alt";
             iconDelete.style.fontSize = "16px"
-            Xdpjnlight.appendChild(iconDelete);
+            const divC = document.createElement('div');
+            divC.className = "divContent"
+
+
+
+            const iconUpdate = document.createElement('i');
+            iconUpdate.className = "fa fa-pencil-square-o";
+            iconUpdate.style.fontSize = "16px"
+            divC.appendChild(iconUpdate);
+            divC.appendChild(iconDelete);
+
+            Xdpjnlight.appendChild(divC);
+
+
+            iconUpdate.addEventListener('click', () => {
+                faplus.style.display = 'none';
+                sub.style.display = 'none'
+                fa_check.style.display = "block";
+                content.value = spanContent.textContent;
+                image_url.value = image.src;
+
+                fa_check.addEventListener('click', () => {
+                    fetch(`/post/update/${item.id}`, {
+                        method: "put",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            content: content.value,
+                            image_url: image_url.value,
+
+                        }),
+                    })
+                    location.reload();
+                })
+            })
 
             iconDelete.addEventListener('click', () => {
                 fetch(`/post/delete/${item.id}`, {
@@ -168,6 +206,7 @@ const showPost = (data) => {
                 })
                 location.reload();
             })
+
 
         }
 
