@@ -88,6 +88,16 @@ body{
     cursor: pointer;
     border-radius: 3px;
 }
+.comment-update{
+      float: right;
+    padding: 6px 10px;
+    border: none;
+    background-color: #00ff1e;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    display: none;
+}
 .comment-box .comment-submit:hover{
       background-color: #5aade0;
 }
@@ -101,8 +111,15 @@ body{
 }
 
 .fa-trash-alt{
-    color: red ;
+color: red ;
+cursor: pointer; 
+float: right;
+margin-left: 500px;
+}
+
+.fa-pencil-square-o{
 cursor: pointer; 
 float: right;
 margin-left: 550px;
+margin-bottom: 10px;
 }

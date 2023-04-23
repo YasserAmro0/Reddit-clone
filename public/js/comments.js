@@ -3,6 +3,7 @@ const content = document.getElementById("textarea");
 const post_comment = document.querySelector(".post-comment");
 const namePost = document.querySelector(".name");
 const postId = window.location.href.split("comments/")[1];
+const comment_update = document.querySelector(".comment-update");
 
 comment_submit.addEventListener('click', () => {
     const body = {
@@ -45,7 +46,34 @@ const showComments = (data) => {
             const iconDelete = document.createElement('i');
             iconDelete.className = "fas fa-trash-alt";
             iconDelete.style.fontSize = "16px"
+
+            const iconUpdate = document.createElement('i');
+            iconUpdate.className = "fa fa-pencil-square-o";
+            iconUpdate.style.fontSize = "16px"
+            user_meta.appendChild(iconUpdate);
             user_meta.appendChild(iconDelete);
+
+
+            iconUpdate.addEventListener('click', () => {
+                content.value = comment_post.textContent;
+                comment_update.style.display = 'block';
+                comment_submit.style.display = 'none';
+
+                comment_update.addEventListener('click', () => {
+
+                    fetch(`/comment/update/${item.id}`, {
+                        method: "put",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            content: content.value,
+                        }),
+                    })
+                    location.reload();
+                })
+
+            })
 
             iconDelete.addEventListener('click', () => {
                 fetch(`/comment/${item.id}`, {

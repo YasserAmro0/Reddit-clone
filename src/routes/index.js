@@ -7,7 +7,7 @@ const isLogged = require("../middleware/isLogged");
 const getInfoUser = require("../controller/users/getInfouser");
 const { getAllDataPost, postDataController, deletePost, updatePost } = require("../controller/posts");
 const { addVoteController, countVoteController, deleteVoteController } = require("../controller/votes");
-const { countCommentsController, getCommentController, postCommentController, deleteComment } = require("../controller/comments");
+const { countCommentsController, getCommentController, postCommentController, deleteComment, updateComments } = require("../controller/comments");
 
 router.use("/check", isLogged);
 
@@ -27,6 +27,7 @@ router.post("/comment/:post_id", authenticatedUser, postCommentController);
 router.use("/getcomment/:post_id", authenticatedUser, getCommentController);
 router.use("/countcomment/:post_id", countCommentsController);
 router.delete("/comment/:id", deleteComment);
+router.put("/comment/update/:id", updateComments);
 
 
 router.get('/myprofile/:username', getInfoUser);
