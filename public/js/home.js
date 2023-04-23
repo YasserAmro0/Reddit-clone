@@ -119,7 +119,7 @@ const showPost = (data) => {
         const kOWlQllight = document.createElement("div");
         kOWlQllight.className = "kOWlQl-light"
         const image = document.createElement("img");
-        image.style.maxWidth = "700px";
+        image.style.maxWidth = "450px";
         image.src = `${item.image_url}`;
         const gBkGwrlight = document.createElement("div");
         gBkGwrlight.className = "gBkGwr-light";
@@ -196,6 +196,8 @@ const showPost = (data) => {
 
                         }),
                     })
+                    content.value = "";
+                    image_url.value = "";
                     location.reload();
                 })
             })
