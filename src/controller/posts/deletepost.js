@@ -1,10 +1,10 @@
 const deletePostQuery = require("../../database/queries/posts/deletepostquery");
 
-const deletePost = (req, res) => {
+const deletePost = (req, res,next) => {
     const { id } = req.params;
     deletePostQuery(id)
         .then((data) => res.json({ message: "done", data: data }))
-        .catch((err) => res.send(err));
+        .catch((err) => next(err));
 }
 
 module.exports = deletePost;

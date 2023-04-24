@@ -2,7 +2,7 @@ const addVoteQuery = require('../../database/queries/votes/addvotequery');
 const userVoteQuery = require("../../database/queries/votes/uservotequery");
 
 
-const addVoteController = (req, res) => {
+const addVoteController = (req, res,next) => {
     const { post_id } = req.params;
     let user_id = req.user.id;
     userVoteQuery({ post_id, user_id })
@@ -15,7 +15,7 @@ const addVoteController = (req, res) => {
 
             }
         })
-        .catch(err => console.log(err));
+        .catch(err => next(err));
 }
 
 module.exports = addVoteController;

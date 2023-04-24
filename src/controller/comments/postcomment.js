@@ -1,6 +1,6 @@
 const postCommentQuery = require('../../database/queries/comments/postcommentquery');
 
-const postCommentController = (req, res) => {
+const postCommentController = (req, res,next) => {
     const { post_id } = req.params;
     const user_id = req.user.id;
     const { content } = req.body;
@@ -8,7 +8,7 @@ const postCommentController = (req, res) => {
         .then((data) => res.status(200).json({
             massage: 'post done comment',
             data: data.rows[0],
-        })).catch((err) => res.status(500).send("error server" + err))
+        })).catch((err) => next(err))
 }
 
 module.exports = postCommentController;

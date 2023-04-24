@@ -1,11 +1,11 @@
 const getJoinPost = require("../../database/queries/posts/getjoinpost");
 
-const getAllDataPost = (req, res) => {
+const getAllDataPost = (req, res,next) => {
     getJoinPost()
         .then((data) => {
             res.json(data.rows)
         })
-        .catch((error) => res.send(error));
+        .catch((error) => next(error));
 }
 
 module.exports = getAllDataPost;

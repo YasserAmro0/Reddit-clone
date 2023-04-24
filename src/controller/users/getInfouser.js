@@ -1,6 +1,6 @@
 const getInfoUserQuery = require('../../database/queries/users/getinfouserquery');
 
-const getInfoUser = (req, res) => {
+const getInfoUser = (req, res, next) => {
     const { username } = req.params;
     getInfoUserQuery(username)
         .then((data) => {
@@ -9,6 +9,6 @@ const getInfoUser = (req, res) => {
                 data: data.rows,
             })
         })
-        .catch((error) => res.send(error));
+        .catch((error) => next(error));
 }
 module.exports = getInfoUser;

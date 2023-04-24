@@ -14,6 +14,7 @@ const redirectToHome = (req, res) => {
 const redirectToProfile = (req, res) => {
     res.status(200).sendFile(path.join(__dirname, "..", "..", "..", "public", "html", "profile.html"));
 }
+
 const redirectToComment = (req, res) => {
     res.status(200).sendFile(path.join(__dirname, "..", "..", "..", "public", "html", "comments.html"));
 }

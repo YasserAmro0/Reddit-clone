@@ -1,6 +1,6 @@
 const getCommentQuery = require('../../database/queries/comments/getcommentquery');
 
-const getCommentController = (req, res) => {
+const getCommentController = (req, res, next) => {
     const { post_id } = req.params;
     getCommentQuery(post_id)
         .then((data) => {
@@ -10,7 +10,7 @@ const getCommentController = (req, res) => {
                 username: req.user.username
             })
         })
-        .catch((error) => res.send(error));
+        .catch((error) => next(error));
 }
 
 module.exports = getCommentController;
