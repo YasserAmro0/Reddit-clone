@@ -50,7 +50,7 @@ loginBtn.addEventListener('click', () => {
             else {
                 success.style.display = "block";
                 success.textContent = "success login"
-                window.location.href = 'home';
+                window.location.href = '/home';
             }
         })
         .catch((err) => console.log(err));
