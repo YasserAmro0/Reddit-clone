@@ -14,7 +14,6 @@ fetch('/allposts')
     .then((data) => showPost(data))
 
 
-
 const showPost = (data) => {
     data.forEach((item) => {
         console.log(item)

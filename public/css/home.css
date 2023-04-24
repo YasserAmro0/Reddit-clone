@@ -148,3 +148,9 @@ margin-top: 10px;
 color: red !important;
 cursor: pointer !important; 
 }
+
+.fa-check{
+  cursor: pointer;
+  color: #0d7ad8 !important;
+  font-size: 22px;
+}
