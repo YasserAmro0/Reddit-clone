@@ -44,29 +44,29 @@ const showPost = (data) => {
 
         mainpostlight.appendChild(divComponent);
 
-        const fdnSHglight = document.createElement("div");
-        fdnSHglight.className = "fdnSHg-light";
+        const containerLight = document.createElement("div");
+        containerLight.className = "fdnSHg-light";
 
-        mainpostlight.appendChild(fdnSHglight);
+        mainpostlight.appendChild(containerLight);
 
-        const Xdpjnlight = document.createElement("div");
-        Xdpjnlight.className = "Xdpjn-light";
+        const contentLight = document.createElement("div");
+        contentLight.className = "Xdpjn-light";
 
         const spanContent = document.createElement("span");
         spanContent.className = "contentText";
         spanContent.textContent = `${item.content}`;
 
-        Xdpjnlight.appendChild(spanContent);
+        contentLight.appendChild(spanContent);
 
-        const iyZCUvlight = document.createElement("div");
-        iyZCUvlight.className = "iyZCUv-light"
-        const kOWlQllight = document.createElement("div");
-        kOWlQllight.className = "kOWlQl-light"
+        const aboutLight = document.createElement("div");
+        aboutLight.className = "iyZCUv-light"
+        const divImage = document.createElement("div");
+        divImage.className = "kOWlQl-light"
         const image = document.createElement("img");
         image.style.maxWidth = "400px";
         image.src = `${item.image_url}`;
-        const gBkGwrlight = document.createElement("div");
-        gBkGwrlight.className = "gBkGwr-light";
+        const footerPost = document.createElement("div");
+        footerPost.className = "gBkGwr-light";
 
 
         const spanByname = document.createElement("span");
@@ -75,16 +75,16 @@ const showPost = (data) => {
         iconUser.className = "fa fa-user-circle-o";
         iconUser.style.fontSize = "20px"
 
-        gBkGwrlight.appendChild(iconUser);
-        gBkGwrlight.appendChild(spanByname);
-        kOWlQllight.appendChild(image);
+        footerPost.appendChild(iconUser);
+        footerPost.appendChild(spanByname);
+        divImage.appendChild(image);
 
-        iyZCUvlight.appendChild(kOWlQllight);
+        aboutLight.appendChild(divImage);
 
-        fdnSHglight.appendChild(Xdpjnlight);
-        fdnSHglight.appendChild(iyZCUvlight);
-        fdnSHglight.appendChild(gBkGwrlight);
-        mainpostlight.appendChild(fdnSHglight);
+        containerLight.appendChild(contentLight);
+        containerLight.appendChild(aboutLight);
+        containerLight.appendChild(footerPost);
+        mainpostlight.appendChild(containerLight);
 
         mainposwrapperlight.appendChild(mainpostlight);
     });
@@ -92,7 +92,3 @@ const showPost = (data) => {
 signup.addEventListener('click', () => {
     window.location.href = 'login';
 })
-
-
-
-
