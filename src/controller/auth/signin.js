@@ -37,7 +37,7 @@ const signinController = (req, res, next) => {
                 const message = error.details.map((i) => i.message)
                 next(new CustomError(400, message))
             } else {
-                res.send(error);
+                next(error);
             }
         })
 
