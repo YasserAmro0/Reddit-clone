@@ -7,6 +7,16 @@
 ![redditSchemaa](https://user-images.githubusercontent.com/87650778/234640922-2f9e5e4c-e979-4c6e-a2b7-04910367a773.png)
 
 
+## USED Technologies:
+
+- HTML
+- CSS
+- Javascript
+- Expressjs
+- postgres
+- NPM packages
+
+
 <h3>UI of website</h3>
   <h4>1- root page</h4> 
   
@@ -31,3 +41,7 @@
  <h4> 6- comments page</h4> 
  
 ![screencapture-localhost-5000-comments-3-2023-04-24-10_30_10](https://user-images.githubusercontent.com/87650778/234643419-5dbf99d5-bed4-4f7f-b40e-697e30a70a8b.png)
+
+
+
+
